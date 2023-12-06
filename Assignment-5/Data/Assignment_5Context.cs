@@ -17,5 +17,7 @@ namespace Assignment_5.Data
         public DbSet<Assignment_5.Models.Genre> Genre { get; set; } = default!;
 
         public DbSet<Assignment_5.Models.Artist>? Artist { get; set; }
+
+        public DbSet<Assignment_5.Models.Song>? Song { get; set; }
     }
 }
