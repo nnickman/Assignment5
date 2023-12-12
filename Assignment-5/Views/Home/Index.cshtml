@@ -1,12 +1,13 @@
-﻿@{
+﻿@using Assignment_5.Models;
+@{
     ViewData["Title"] = "Home Page";
     List<string>? genres = (List<string>?)ViewData["Genres"];
     List<string>? artists = (List<string>?)ViewData["Artists"];
-    List<Song>? songs = (List<Song>?)ViewData["Songs"];
+    List<Media>? songs = (List<Media>?)ViewData["Songs"];
 
-    Song[] songsArray = (Song[])ViewData["SongsArray"];
-    int[] quantitiesArray = (int[])ViewData["QuantitiesArray"];
-    decimal totalPrice = (decimal)ViewData["TotalPrice"];
+    Media[] songsArray = (Media[])ViewData["SongsArray"];
+    //int[] quantitiesArray = (int[])ViewData["QuantitiesArray"];
+    //decimal totalPrice = (decimal)ViewData["TotalPrice"];
 }
 
 <div class="text-center">
