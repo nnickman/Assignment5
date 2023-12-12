@@ -1,19 +1,30 @@
-﻿@using Assignment_5.Models;
-@{
+﻿@{
     ViewData["Title"] = "Home Page";
     List<string>? genres = (List<string>?)ViewData["Genres"];
     List<string>? artists = (List<string>?)ViewData["Artists"];
     List<Media>? songs = (List<Media>?)ViewData["Songs"];
 
     Media[] songsArray = (Media[])ViewData["SongsArray"];
-    //int[] quantitiesArray = (int[])ViewData["QuantitiesArray"];
-    //decimal totalPrice = (decimal)ViewData["TotalPrice"];
 }
 
 <div class="text-center">
     <h1 class="display-4">MusicShop</h1>
-    <input class="btn btn-outline-dark" type="submit" value="Filter" />
+
+    <form asp-asp-controller="Home" asp-action="Index" method="get">
+        <label for="genre">Please Choose a Genre:</label>
+        <select id="genre" name="genre">
+            <option value="">All Genres</option>
+            @foreach(string genre in genres)
+            {
+                <option value="@genre">@genre</option>
+            }
+        </select>
+        <input class="btn btn-outline-dark" type="submit" value="Filter" />
+
+
+    </form>
     
+    }
     <input class="btn btn-outline-danger" type="submit" value="Clear Filters" />
 </div>
 
