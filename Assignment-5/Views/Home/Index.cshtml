@@ -19,10 +19,24 @@
                 <option value="@genre">@genre</option>
             }
         </select>
+
+
         <input class="btn btn-outline-dark" type="submit" value="Filter" />
-
-
+        @if (artists.Count != 0)
+        {
+            <label for="artist">Please Choose a Artist:</label>
+            <select id="artist" name="artist">
+                <option value="">All Artists</option>
+                @foreach (string artist in artists)
+                {
+                    <option value="@artist">@artist</option>
+                }
+            </select>
+            <input class="btn btn-outline-dark" type="submit" value="Filter" />
+        }
+        <input class="btn btn-outline-danger" type="submit" value="Clear Filters" />
     </form>
+
     
     
     <input class="btn btn-outline-danger" type="submit" value="Clear Filters" />
