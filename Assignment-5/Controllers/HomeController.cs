@@ -16,36 +16,6 @@ namespace Assignment_5.Controllers
             _context = _context;
         }
 
-        public async Task<IActionResult> Index(string genre, string artist)
-        {
-            if(_context == null)
-            {
-                return Problem("Assignment5Context.Songs is null");
-            }
-            var allSongs = from x in _context.Song
-                               select x;
-
-            var songs = from x in _context.Song
-                            select x;
-
-                string thisArtist = (from x in _context.Artist
-                                     where x.Name == artist
-                                     select x.Id).ToString();
-
-            
-            int thisArtistId;
-            Int32.TryParse(thisArtist, out thisArtistId);
-            
-
-            List<string> artistList = new List<string>();
-
-            if(!String.IsNullOrEmpty(genre)) 
-            {
-                songs = songs.Where(s => s.ArtistID == thisArtistId);
-            }
-            }
-        }
-
 
 
 
