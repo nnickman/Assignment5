@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace Assignment_5.Controllers
 {
@@ -8,5 +9,6 @@ namespace Assignment_5.Controllers
         {
             return View();
         }
+        
     }
 }
