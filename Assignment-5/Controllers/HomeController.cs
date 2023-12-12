@@ -58,10 +58,10 @@ namespace Assignment_5.Controllers
                         genreList.Add(song.Genre);
                 }
 
-                ViewData["Genres"] = genreList;
+                
                 ViewData["Genres"] = genreList;
                 ViewData["Artists"] = artistList;
-            
+                ViewData["Songs"] = songList;
 
 
             return View(await songs.ToListAsync());

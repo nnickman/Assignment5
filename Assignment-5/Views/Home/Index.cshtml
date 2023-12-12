@@ -5,6 +5,7 @@
     List<Media>? songs = (List<Media>?)ViewData["Songs"];
 
     Media[] songsArray = (Media[])ViewData["SongsArray"];
+
 }
 
 <div class="text-center">
@@ -36,9 +37,6 @@
         }
         <input class="btn btn-outline-danger" type="submit" value="Clear Filters" />
     </form>
-
-    
-    
 </div>
 
 <table>
@@ -50,4 +48,23 @@
             <th class="col-sm-2">Price</th>
         </tr>
     </thead>
+    <tbody>
+        @foreach(Media song in songs)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => song.SongName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => song.Artist)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => song.Genre)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => song.Price)
+                </td>
+            </tr>
+        }
+    </tbody>
 </table>
